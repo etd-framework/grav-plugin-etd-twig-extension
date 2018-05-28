@@ -1,0 +1,27 @@
+name: Etd Twig Extension
+version: 0.0.1
+description: Special Twig Extension
+icon: plug
+author:
+  name: ETD Solutions
+  email: contact@etd-solutions.com
+homepage: https://github.com/etd-framework/grav-plugin-etd-twig-extension
+demo: http://demo.yoursite.com
+keywords: grav, plugin, etc
+bugs: https://github.com/etd-framework/grav-plugin-etd-twig-extension/issues
+docs: https://github.com/etd-framework/grav-plugin-etd-twig-extension/blob/develop/README.md
+license: MIT
+
+form:
+  validation: strict
+  fields:
+    enabled:
+      type: toggle
+      label: PLUGIN_ADMIN.PLUGIN_STATUS
+      highlight: 1
+      default: 0
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
