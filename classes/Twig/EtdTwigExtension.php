@@ -21,7 +21,19 @@ class EtdTwigExtension extends \Twig_Extension
         $amp = clone $page;
         $amp->modifyHeader('append_url_extension', $extension);
 
-        return $amp->canonical();
+        $is_home = $amp->home();
+        if ($is_home) {
+            $home = Grav::instance()['config']->get('system.home.alias');
+            Grav::instance()['config']->set('system.home.alias', '####FAKE####');
+        }
+
+        $url = $amp->canonical();
+
+        if ($is_home) {
+            Grav::instance()['config']->set('system.home.alias', $home);
+        }
+
+        return $url;
     }
 
     public function minify($buffer, $type = 'css') {
