@@ -1,6 +1,8 @@
 <?php
 namespace Grav\Plugin\EtdTwigExtension\Twig;
 
+use Grav\Common\Grav;
+
 class EtdTwigExtension extends \Twig_Extension
 {
 
